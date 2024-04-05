@@ -9,4 +9,12 @@
     width: 100%;
     border-color: currentColor;
   }
+
+  &__link {
+    color: #9e9eff;
+
+    &--active {
+      color: #ff9e9e;
+    }
+  }
 }

@@ -9,6 +9,7 @@ import { cocktailList } from '@/features/cocktails';
         v-for="{ code, displayName } in cocktailList"
         :key="code"
         class="sidebar__link"
+        active-class="sidebar__link--active"
         :to="{
           name: 'cocktail',
           params: {
@@ -19,7 +20,13 @@ import { cocktailList } from '@/features/cocktails';
         {{ displayName }}
       </RouterLink>
       <hr class="sidebar__hr" />
-      <RouterLink to="/404" class="sidebar__link">404</RouterLink>
+      <RouterLink
+        to="/404"
+        class="sidebar__link"
+        active-class="sidebar__link--active"
+      >
+        404
+      </RouterLink>
     </nav>
   </aside>
 </template>
