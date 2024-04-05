@@ -1,3 +1,4 @@
+import { api } from '../api';
 import type { CocktailCode } from './types';
 
 export interface CocktailsSearchDTO {
@@ -16,18 +17,22 @@ export interface Drink {
   strGlass: string;
   strInstructions: string;
   strDrinkThumb: string;
-  [key: `strIngredient${number}`]: string;
-  [key: `strMeasure${number}`]: string;
+  [key: `strIngredient${number}`]: string | null;
+  [key: `strMeasure${number}`]: string | null;
   strImageSource: string;
   strImageAttribution: string;
   strCreativeCommonsConfirmed: string;
   dateModified: string;
 }
 
-export async function fetchCocktail(code: CocktailCode): Promise<Drink | null> {
-  const res = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${code}`,
-  ).then((res) => res.json() as Promise<CocktailsSearchDTO>);
+export async function fetchCocktail(code: CocktailCode) {
+  const res = await api<CocktailsSearchDTO>('/search.php', {
+    query: { s: code },
+  });
 
-  return res.drinks[0] || null;
+  if (!res.drinks?.length) {
+    throw new Error('Not found');
+  }
+
+  return res.drinks[0] ?? null;
 }
