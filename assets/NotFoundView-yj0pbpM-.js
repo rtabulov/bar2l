@@ -1,1 +1,0 @@
-import{z as s,A as r,G as _}from"./index-CAIduIjS.js";const a=(t,e)=>{const o=t.__vccOpts||t;for(const[n,c]of e)o[n]=c;return o},d={},l=_("h1",null,"404 Not Found",-1),u=[l];function f(t,e){return s(),r("div",null,u)}const p=a(d,[["render",f]]);export{p as default};
