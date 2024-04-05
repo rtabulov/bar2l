@@ -1,0 +1,11 @@
+html {
+  --color: #111;
+  --html-padding-y: 1rem;
+  @media (prefers-color-scheme: dark) {
+    --color: #eee;
+  }
+
+  color: var(--color);
+  padding-top: var(--html-padding-y);
+  padding-bottom: var(--html-padding-y);
+}

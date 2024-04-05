@@ -1,0 +1,12 @@
+.sidebar {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__hr {
+    width: 100%;
+    border-color: currentColor;
+  }
+}

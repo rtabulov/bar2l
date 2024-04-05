@@ -1,0 +1,22 @@
+.cocktail-details {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__main {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  &__image-wrapper {
+    text-align: center;
+    min-width: 0;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}

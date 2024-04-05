@@ -1,0 +1,10 @@
+.container {
+  --padding-x: 1rem;
+
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 64rem;
+}

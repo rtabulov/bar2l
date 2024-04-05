@@ -1,0 +1,30 @@
+.layout {
+  --border-color: #222;
+  --border-width: 1px;
+  --padding-x: 1rem;
+  --padding-y: 0.5rem;
+
+  min-height: calc(100vh - 2 * var(--html-padding-y));
+  flex-wrap: wrap;
+
+  @media (prefers-color-scheme: dark) {
+    --border-color: #ddd;
+  }
+
+  display: flex;
+
+  &__aside {
+    min-width: 240px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    border: var(--border-width) solid var(--border-color);
+    padding: var(--padding-y) var(--padding-x);
+  }
+
+  &__main {
+    flex-grow: 99;
+    min-width: 0;
+    border: var(--border-width) solid var(--border-color);
+    padding: var(--padding-y) var(--padding-x);
+  }
+}
