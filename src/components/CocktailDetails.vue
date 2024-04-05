@@ -34,6 +34,8 @@ defineProps<{
     <div class="cocktail-details__image-wrapper">
       <img
         :src="cocktail.strDrinkThumb"
+        :alt="cocktail.strDrink"
+        loading="lazy"
         class="cocktail-details__image"
         width="700px"
         height="700px"

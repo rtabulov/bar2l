@@ -14,6 +14,8 @@ const query = useCocktail(cocktailCode);
 
 <template>
   <BaseLoading v-slot="{ data: cocktail }" :query="query">
-    <CocktailDetails :cocktail="cocktail" />
+    <KeepAlive>
+      <CocktailDetails :key="cocktailCode" :cocktail="cocktail" />
+    </KeepAlive>
   </BaseLoading>
 </template>
